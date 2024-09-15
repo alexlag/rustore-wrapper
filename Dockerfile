@@ -10,4 +10,4 @@ COPY . .
 ENV NODE_ENV=production
 USER bun
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "run", "index.tsx" ]
+ENTRYPOINT [ "bun", "start" ]
