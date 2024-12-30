@@ -32,4 +32,4 @@ app.get("/d/:appId{.+\\.apk}", async (c) => {
   return c.notFound();
 });
 
-Bun.serve({ ...app, idleTimeout: 600 });
+Bun.serve({ ...app, idleTimeout: 255 });
