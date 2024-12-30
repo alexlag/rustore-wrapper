@@ -7,9 +7,11 @@
     "start": "bun run src/index.tsx"
   },
   "dependencies": {
+    "adm-zip": "^0.5.16",
     "hono": "^4.6.1"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
     "@types/bun": "latest"
   }
 }

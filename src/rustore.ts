@@ -7,7 +7,7 @@ export type AppInfo = {
 
 const BASE_URL = "https://backapi.rustore.ru";
 
-async function getAppVersionApkUrl(appId: number): Promise<string> {
+export async function getAppVersionApkUrl(appId: number): Promise<string> {
   const raw = await fetch(`${BASE_URL}/applicationData/download-link`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -28,7 +28,6 @@ export async function getAppInfo(name: string): Promise<AppInfo> {
 
   const id: number = res["body"]["appId"];
   const version: string = res["body"]["versionName"];
-  const apkUrl = await getAppVersionApkUrl(id);
 
-  return { id, name, version, apkUrl };
+  return { id, name, version, apkUrl: `/d/${id}.apk` };
 }
