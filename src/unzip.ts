@@ -6,7 +6,7 @@ export async function readApkFromZip(url: string): Promise<Buffer | null> {
   const zip = new AdmZip(buffer);
 
   for (const entry of zip.getEntries()) {
-    if (entry.entryName === "apk") {
+    if (entry.entryName.endsWith("apk")) {
       return entry.getData();
     }
   }
